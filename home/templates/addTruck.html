@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+<body>
+  <form method="post">
+    {% csrf_token %}
+    <div class="container">  
+      <div class="row">
+        <div class="col">
+          <h2>ADD TRUCK LOCATION</h2>    
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="trucklocation">TRUCK LOCATION</label>
+            <input type="text" class="form-control" name="truckLock" id="truckLock">
+          </div>
+          <div class="form-group">
+            <label for="foodType">FOOD TYPE</label>
+            <input type="text" class="form-control" name="foodType" id="foodType">
+          </div>
+          <div class="form-group">
+            <label for="openTime">OPEN TIME</label>
+            <input type="text" class="form-control" name="openTime" id="openTime">
+          </div>
+          <div class="form-group">
+            <label for="closingTime">CLOSING TIME</label>
+            <input type="text" class="form-control" name="closingTime" id="closingTime">
+          </div>
+          <button type="submit" name="addTruck" class="btn btn-default">ADD</button>
+          </div>    
+        </div>
+        {% if messages %}
+        {% for result in messages %}
+        <div class="row">
+          <div class="col">
+            <b style="color:green">{{result}}</b>    
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </form>
+
+  </body>
+</html>
